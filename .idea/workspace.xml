@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0a91b0-f3f3-4fea-ba18-06394a0caaf0" name="Changes" comment="">
+    <list default="true" id="8d0a91b0-f3f3-4fea-ba18-06394a0caaf0" name="Changes" comment="Chat Flow - Input/User text type.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +49,7 @@
     "Gradle.ChatFlow [:Main.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "branch-1",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -78,11 +78,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720036990146</updated>
-      <workItem from="1720036991220" duration="3070000" />
+      <workItem from="1720036991220" duration="3765000" />
     </task>
+    <task id="LOCAL-00001" summary="Chat Flow - Input/User text type.">
+      <option name="closed" value="true" />
+      <created>1720105627977</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720105627977</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Chat Flow - Input/User text type." />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat Flow - Input/User text type." />
   </component>
 </project>
