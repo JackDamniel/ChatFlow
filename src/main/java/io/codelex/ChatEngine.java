@@ -1,35 +1,49 @@
 package io.codelex;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.*;
 
 public class ChatEngine {
     private List<ChatDialog> dialogs = new ArrayList<>();
-    private int currentDialogIndex = 0;
-    private Scanner scanner = new Scanner(System.in);
     private Map<String, String> context = new HashMap<>();
+    private Scanner scanner;
+    private PrintStream out;
+
+    public ChatEngine(InputStream in, OutputStream out) {
+        this.scanner = new Scanner(in);
+        this.out = new PrintStream(out);
+    }
 
     public void addDialog(ChatDialog dialog) {
         dialogs.add(dialog);
     }
 
     public void start() {
-        while (currentDialogIndex < dialogs.size()) {
-            ChatDialog dialog = dialogs.get(currentDialogIndex);
-            System.out.println(dialog.getMessage(context));
-            String userInput = scanner.nextLine();
-            UserResponse response = new UserResponse(userInput);
-            dialog.handleResponse(response);
-            updateContext(dialog, response);
-            currentDialogIndex++;
+        for (ChatDialog dialog : dialogs) {
+            String message = dialog.getMessage(context);
+            out.println(message);
+
+            if (dialog.requiresInput()) {
+                if (scanner.hasNextLine()) {
+                    String userInput = scanner.nextLine().trim();
+                    UserResponse response = new UserResponse(userInput, dialog.getInputType().toString());
+                    dialog.handleResponse(response);
+                    updateContext(response);
+                } else {
+                    System.err.println("No input available for dialog: " + message);
+                    break;
+                }
+            }
         }
     }
 
-    private void updateContext(ChatDialog dialog, UserResponse response) {
-        context.put("lastResponse", response.getResponse());
+    private void updateContext(UserResponse response) {
+        context.put(response.getKey(), response.getResponse());
     }
 
     public Map<String, String> getContext() {
         return context;
     }
 }
-

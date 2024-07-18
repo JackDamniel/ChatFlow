@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0a91b0-f3f3-4fea-ba18-06394a0caaf0" name="Changes" comment="Chat Flow - Chat Engine start">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="8d0a91b0-f3f3-4fea-ba18-06394a0caaf0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/ChatDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/ChatDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/ChatEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/ChatEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/MessageTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/MessageTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/codelex/ChatDialogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/codelex/ChatDialogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/codelex/ChatEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/codelex/ChatEngineTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.ChatDialogTest.executor": "Run",
+    "Gradle.ChatDialogTest.testGetMessage.executor": "Run",
     "Gradle.ChatEngineTest.executor": "Run",
+    "Gradle.ChatEngineTest.testExample1.executor": "Run",
+    "Gradle.ChatEngineTest.testExample2.executor": "Run",
+    "Gradle.ChatEngineTest.testExample3.executor": "Run",
+    "Gradle.ChatEngineTest.testFirstInputRemembered.executor": "Run",
+    "Gradle.ChatEngineTest.testMultiStepConversation.executor": "Run",
     "Gradle.ChatEngineTest.testStart.executor": "Run",
     "Gradle.ChatFlow [:Main.main()].executor": "Run",
     "Gradle.MessageTemplateTest.executor": "Run",
@@ -105,7 +113,7 @@
       <recent name="io.codelex" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MessageTemplateTest">
+  <component name="RunManager" selected="Gradle.ChatEngineTest">
     <configuration name="ChatDialogTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -154,6 +162,54 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ChatEngineTest.testExample1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;io.codelex.ChatEngineTest.testExample1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ChatEngineTest.testMultiStepConversation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;io.codelex.ChatEngineTest.testMultiStepConversation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="MessageTemplateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -178,61 +234,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MessageTemplateTest.testEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;io.codelex.MessageTemplateTest.testEmail&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="MessageTemplateTest.testRender" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;io.codelex.MessageTemplateTest.testRender&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MessageTemplateTest" />
-        <item itemvalue="Gradle.MessageTemplateTest.testEmail" />
-        <item itemvalue="Gradle.MessageTemplateTest.testRender" />
         <item itemvalue="Gradle.ChatEngineTest" />
         <item itemvalue="Gradle.ChatDialogTest" />
+        <item itemvalue="Gradle.MessageTemplateTest" />
+        <item itemvalue="Gradle.ChatEngineTest.testMultiStepConversation" />
+        <item itemvalue="Gradle.ChatEngineTest.testExample1" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +261,9 @@
       <updated>1720036990146</updated>
       <workItem from="1720036991220" duration="3765000" />
       <workItem from="1720282007790" duration="641000" />
-      <workItem from="1720424571699" duration="4895000" />
+      <workItem from="1720424571699" duration="13571000" />
+      <workItem from="1720700736662" duration="608000" />
+      <workItem from="1721291287567" duration="2330000" />
     </task>
     <task id="LOCAL-00001" summary="Chat Flow - Input/User text type.">
       <option name="closed" value="true" />
@@ -271,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720282239491</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Chat Engine + Unit Tests">
+      <option name="closed" value="true" />
+      <created>1720439606681</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720439606681</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +298,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Chat Flow - Input/User text type." />
     <MESSAGE value="Chat Flow - Chat Engine start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chat Flow - Chat Engine start" />
+    <MESSAGE value="Chat Engine + Unit Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat Engine + Unit Tests" />
   </component>
 </project>

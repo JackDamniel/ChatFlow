@@ -16,4 +16,8 @@ public class MessageTemplate {
         }
         return rendered;
     }
+
+    public void setPlaceholder(String placeholder, String value) {
+        template = template.replace("${" + placeholder + "}", value);
+    }
 }
