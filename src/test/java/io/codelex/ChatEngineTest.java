@@ -3,6 +3,8 @@ package io.codelex;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -12,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ChatEngineTest {
 
     @Test
-    public void testExample1() {
+    public void testExample1() throws IOException {
         String simulatedUserInput = "John\nDoe\n";
         ByteArrayInputStream in = new ByteArrayInputStream(simulatedUserInput.getBytes());
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -53,7 +55,7 @@ public class ChatEngineTest {
     }
 
     @Test
-    public void testExample2() {
+    public void testExample2() throws IOException {
         String simulatedUserInput = "john.doe@example.com\n30\n";
         ByteArrayInputStream in = new ByteArrayInputStream(simulatedUserInput.getBytes());
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -88,7 +90,7 @@ public class ChatEngineTest {
     }
 
     @Test
-    public void testExample3() {
+    public void testExample3() throws IOException {
         String simulatedUserInput = "Home\n";
         ByteArrayInputStream in = new ByteArrayInputStream(simulatedUserInput.getBytes());
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -119,7 +121,7 @@ public class ChatEngineTest {
     }
 
     @Test
-    public void testMultiStepConversation() {
+    public void testMultiStepConversation() throws IOException {
         String simulatedUserInput = "John\nDoe\njohn.doe@example.com\n";
         ByteArrayInputStream in = new ByteArrayInputStream(simulatedUserInput.getBytes());
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -163,5 +165,33 @@ public class ChatEngineTest {
         String actualOutput = out.toString().trim();
 
         assertEquals(expectedOutput.replaceAll("\\s+", " "), actualOutput.replaceAll("\\s+", " "));
+    }
+    @Test
+    public void testValidationSingleChoice() throws IOException {
+        String simulatedUserInput = "Invalid\nCar\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(simulatedUserInput.getBytes());
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        ChatEngine engine = new ChatEngine(in, out);
+
+        MessageTemplate template = new MessageTemplate("And what do you need the money for?\n<single-choice-input=['Home','Car','Holidays','Big Event']>");
+        Consumer<UserResponse> responseHandler = response -> {
+            engine.getContext().put("purpose", response.getResponse());
+        };
+        List<String> validChoices = Arrays.asList("Home", "Car", "Holidays", "Big Event");
+        ChatDialog dialog = new ChatDialog(template, InputType.SINGLE_CHOICE, responseHandler, true, validChoices);
+
+        engine.addDialog(dialog);
+
+        engine.start();
+
+        String output = out.toString();
+        System.out.println(output);
+
+        assertTrue(output.contains("Invalid choice, please select from: Home, Car, Holidays, Big Event"));
+        assertTrue(output.contains("And what do you need the money for?"));
+
+        Map<String, String> context = engine.getContext();
+        assertEquals("Car", context.get("purpose"));
     }
 }
